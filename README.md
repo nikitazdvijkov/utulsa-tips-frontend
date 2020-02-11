@@ -1,4 +1,4 @@
-card template as it once was:
+former card template:
 
 ```html
 <div class="card bg-light my-2">
@@ -9,4 +9,16 @@ card template as it once was:
     Submitted by Mike on 02/03/2020
   </div>
 </div>
+```
+
+former form tag:
+
+```html
+<form action="https://whispering-dusk-20797.herokuapp.com/products" method="POST" name="myForm">
+```
+
+former button tag:
+
+```html
+<button type="submit" name="submit" value="submit" onclick="submitForm();" class="btn btn-primary">Submit</button>
 ```

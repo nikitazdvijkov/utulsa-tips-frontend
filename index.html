@@ -14,7 +14,7 @@
     <div id="header" class="jumbotron text-center rounded-0 mb-0">
       <div class="container">
         <h1>UTulsa Tips</h1>
-        <p>Where TU students share advice.</p>
+        <div>Where TU students share advice.</div>
       </div>
     </div>
     <div id="main" class="container">
@@ -24,15 +24,16 @@
       </div>
       <div id="submit" class="mt-5">
         <h2>Submit your own:</h2>
-        <form>
+        <form name="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1">Name</label>
-            <input type="email" class="form-control" id="name" placeholder="name">
+            <input class="form-control" id="name" placeholder="name">
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Price</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="price"></textarea>
           </div>
+          <button type="button" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
