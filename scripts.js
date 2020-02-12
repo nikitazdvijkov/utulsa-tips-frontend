@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  
+  // render api data
   var htmlBeginning = "<div class='card bg-light my-2'><div class='card-body'>";
   var htmlMiddle = "</div><div class='card-footer text-muted text-center'>";
   var htmlEnd = "</div>"
@@ -11,38 +13,34 @@ $(document).ready(function() {
   })
   .fail(function() {
     console.log( "error" );
-    $("#cards").html("Something went wrong :(");
+    $("#cards").html("<div class='text-center'>Something went wrong with the API :(</div>");
   });
 
-  /*
-  $("#myForm").submit(function(e) {
-    e.preventDefault();
-    console.log("here we are");
-  });
-  */
-
-  $("button").click(function(){
-    console.log("here we are now");
-    var formData = JSON.stringify($("#myForm").serializeArray());
+  // handle form submission
+  $("#myForm").submit(function(event) {
+    formData = $(this).serializeArray();
+    console.log("formData:");
     console.log(formData);
-    /*
-    $.post("demo_test_post.asp",
-    {
-      name: "chicken sandwich",
-      price: "4.00"
-    },
-    function(data, status) {
-      alert("Data: " + data + "\nStatus: " + status);
+    postRequestBody = {
+      name: formData[0].value,
+      price: formData[1].value
+    };
+    console.log("postRequestBody:");
+    console.log(postRequestBody);
+    $.post(
+      "https://whispering-dusk-20797.herokuapp.com/products", 
+      postRequestBody, 
+      function() {
+        console.log("success: post request sent");
+      })
+      .done(function() {
+        $("#submit").append("<div>success</div>");
+        console.log("success message appended")
+      })
+      .fail(function() {
+        $("#submit").append("<div>error</div>");
+        console.log("error message appended")
     });
-    */
+    event.preventDefault();
   });
-
 });
-
-/*
-function submitForm() {
-  console.log("here we are");
-  var formData = JSON.stringify($("#myForm").serializeArray());
-  console.log(formData);
-}
-*/
