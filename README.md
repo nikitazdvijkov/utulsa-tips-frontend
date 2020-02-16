@@ -1,3 +1,31 @@
+# README
+
+## fonts howto
+
+```CSS
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Crete Round', serif;
+font-family: 'Martel', serif;
+font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'Volkhov', serif;
+```
+
+## how to implement smooth scroll back to top:
+
+nah just look up
+scroll back to top jquery
+on google
+find full ready solution instead of diy
+make it with shadow
+
+[try it demo](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll_jquery)
+on w3schools
+and
+[full details](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp)
+
+
+## discarded code
+
 former card template:
 
 ```html
@@ -64,7 +92,7 @@ $("#myForm").submit(function(e) {
 
 and 
 
-```
+```javascript
 /*
   $("#myForm").submit(function( event ) {
     console.log( $( this ).serializeArray() );

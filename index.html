@@ -1,48 +1,184 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151494080-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151494080-4');
+    </script>
+    <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="A place for the TU community to share advice, created by Nikita Zdvijkov.">
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <title>UTulsa Tips</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- custom css -->
+    <style>
+      #back-to-top {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+      }
+      #back-to-top i {
+        position: relative;
+        bottom: 1px;
+      }
+      .list-group {
+        max-width: 600px;
+      }
+      h1 {
+        font-family: 'Martel', serif;
+      }
+      #divider i {
+        color: lightgray;
+        font-size: 5rem;
+      }
+      img {
+        max-width: 250px;
+      }
+      .jumbotron {
+        color: black;
+      }
+    </style>
   </head>
   <body>
     <div id="header" class="jumbotron text-center rounded-0 mb-0">
       <div class="container">
-        <h1>UTulsa Tips</h1>
-        <div>Where TU students share advice.</div>
+        <!--
+        <i class="fas fa-hand-point-right" style="font-size: 3.2em;"></i><br>
+        -->
+        <img src="johnny-automatic-pointing-hand.svg" alt="pointing hand logo">
+        <h1 class="mt-3">UTulsa.Tips</h1>
+        <!--
+        <small>Where TU students share advice</small>
+        --> 
       </div>
     </div>
     <div id="main" class="container">
+      <div id="better-filter" class="mt-5 text-center">
+        <h2 class="mb-3"><i class="fas fa-filter mr-2"></i>Filter</h2>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" checked> All
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2"> School
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> Fun
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> Orgs
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> $$$
+          </label>
+        </div>
+      </div>
+      <div id="filters" class="mt-5">
+        <div class="list-group text-center d-block mx-auto" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action py-1 active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+          <a class=" py-1" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+          <a class="list-group-item list-group-item-action py-1" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+          <a class="list-group-item list-group-item-action py-1" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+        </div>
+      </div>
       <h2 class="mt-5">All the tips:</h2>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">a</div>
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">b</div>
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">c</div>
+        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">d</div>
+      </div>
       <div id="cards" class="mt-5">
         <div class="text-center">Loading&hellip;</div>
       </div>
+      <div id="divider" class="text-center mt-5">
+        <i class="fas fa-asterisk"></i>
+      </div>
       <div id="submit" class="mt-5">
-        <h2>Submit your own:</h2>
+        <h2 class="mb-4">Submit your own&hellip;</h2>
         <form id="myForm">
           <div class="form-group">
-            <label for="exampleFormControlInput1">Name</label>
+            <label for="exampleFormControlInput1">Alias</label>
             <input name="name" value="" class="form-control" placeholder="Captain Cane">
+            <small id="" class="form-text text-muted">
+              Optional &ndash; defaults to &ldquo;Anonymous&rdquo; if left blank.
+            </small>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Price</label>
+            <label for="exampleFormControlTextarea1">Words of wisdom</label>
             <textarea name="price" value="" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Know about this opportunity. Take this class. Do this thing."></textarea>
+            <small id="" class="form-text text-muted">
+              Please make separate submissions for unrelated pieces of advice.
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Applicable categories</label>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customControlInline">
+              <label class="custom-control-label" for="customControlInline">School</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customControlInline">
+              <label class="custom-control-label" for="customControlInline">Fun</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customControlInline">
+              <label class="custom-control-label" for="customControlInline">Orgs</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customControlInline">
+              <label class="custom-control-label" for="customControlInline">$$$</label>
+            </div>
           </div>
           <input type="submit" value="Submit" class="btn btn-primary">
         </form>
       </div>
+      <div id="success" class="text-center mt-5">
+        <div class="mb-3">
+          <i class="fas fa-check mr-2" style="color: green;"></i>Submission received &ndash;
+          <a href="#">make another.</a>
+        </div>
+      </div>
+      <div id="fail" class="text-center mt-5">
+        <div class="mb-3">
+          <i class="fas fa-times mr-2" style="color: red;"></i>
+          Something went wrong. Try again later.
+        </div>
+      </div>
     </div>
     <div id="footer" class="text-center bg-light py-3 mt-5">
       <div class="container">
-        Created by
-        <a href="http://nikitazdvijkov.com">Nikita Zdvijkov</a>
+        <div>
+          Created by
+          <a href="http://nikitazdvijkov.com" class="mb-4">
+            Nikita Zdvijkov
+          </a>
+        </div>
+        <div>
+          <small id="fine-print" class="text-muted">
+            This website is not endorsed by the University of Tulsa. 
+            Submissions moderated. 
+            <a href="/about">More info.</a>
+            <a href="/about">Give feedback.</a>
+          </small>
+        </div>
       </div>
     </div>
+    <button id="back-to-top" class="rounded-circle bg-dark text-light text-center shadow-lg">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- full jquery instead of slim as in bootstrap boilerplate -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,5 +188,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- custom js -->
     <script src="/scripts.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|IBM+Plex+Serif|Martel|Pathway+Gothic+One|Volkhov&display=swap" rel="stylesheet">
   </body>
 </html>
