@@ -3,12 +3,14 @@ $(document).ready(function() {
   // render api data
   var htmlBeginning = "<div class='card bg-light my-2'><div class='card-body'>";
   var htmlMiddle = "</div><div class='card-footer text-muted text-center'>";
-  var htmlEnd = "</div>"
-  $.getJSON("https://whispering-dusk-20797.herokuapp.com/products", function(myJson) {
+  var htmlEnd = "</div>";
+  $.getJSON("http://utulsa-tips-api.herokuapp.com/tips", function(myJson) {
     console.log(myJson);
-    $("#cards").empty();
+    $("#cards").empty(); // needed to remove loading message
     $.each(myJson, function(index, element) {
-      $("#cards").append(htmlBeginning + element.name + htmlMiddle + element.price + htmlEnd);
+      var detailsString = new Date(element.timestamp).toLocaleDateString("en-US");
+      detailsString = "By " + element.alias + " on " + detailsString;
+      $("#cards").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
     });
   })
   .fail(function() {
