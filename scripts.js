@@ -4,7 +4,7 @@ $(document).ready(function() {
   var htmlBeginning = "<div class='card bg-light my-2'><div class='card-body'>";
   var htmlMiddle = "</div><div class='card-footer text-muted text-center'>";
   var htmlEnd = "</div>";
-  $.getJSON("http://utulsa-tips-api.herokuapp.com/tips", function(myJson) {
+  $.getJSON("https://utulsa-tips-api.herokuapp.com/tips", function(myJson) {
     console.log(myJson);
     $("#loading-message").addClass("d-none"); // hide loading message placeholder
     $("#list-group-content").removeClass("d-none"); // show the tips
