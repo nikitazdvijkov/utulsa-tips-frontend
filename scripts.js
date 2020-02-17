@@ -1,21 +1,31 @@
 $(document).ready(function() {
   
-  // render api data
+  //render api data
   var htmlBeginning = "<div class='card bg-light my-2'><div class='card-body'>";
   var htmlMiddle = "</div><div class='card-footer text-muted text-center'>";
   var htmlEnd = "</div>";
   $.getJSON("http://utulsa-tips-api.herokuapp.com/tips", function(myJson) {
     console.log(myJson);
-    $("#cards").empty(); // needed to remove loading message
+    $("#loading-message").addClass("d-none"); // hide loading message placeholder
+    $("#list-group-content").removeClass("d-none"); // show the tips
     $.each(myJson, function(index, element) {
       var detailsString = new Date(element.timestamp).toLocaleDateString("en-US");
       detailsString = "By " + element.alias + " on " + detailsString;
-      $("#cards").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
+      $("#all-tips").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
+      if (element.tags.includes("school")) {
+        $("#school-tips").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
+      }
+      if (element.tags.includes("fun")) {
+        $("#fun-tips").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
+      }
+      if (element.tags.includes("money")) {
+        $("#money-tips").append(htmlBeginning + element.tipContent + htmlMiddle + detailsString + htmlEnd);
+      }
     });
   })
   .fail(function() {
     console.log( "error" );
-    $("#cards").html("<div class='text-center'>Something went wrong with the API :(</div>");
+    $("#loading-message").html("<div class='text-center'>Something went wrong with the API :(</div>");
   });
 
   // handle form submission
@@ -24,25 +34,37 @@ $(document).ready(function() {
     console.log("formData:");
     console.log(formData);
     postRequestBody = {
-      name: formData[0].value,
-      price: formData[1].value
+      alias: formData[0].value,
+      tipContent: formData[1].value
     };
     console.log("postRequestBody:");
     console.log(postRequestBody);
     $.post(
-      "https://whispering-dusk-20797.herokuapp.com/products", 
+      "https://utulsa-tips-api.herokuapp.com/tips", 
       postRequestBody, 
       function() {
-        console.log("success: post request sent");
+        console.log("post request sent");
       })
       .done(function() {
-        $("#submit").append("<div>success</div>");
-        console.log("success message appended")
+        $("#submit").addClass("d-none");
+        $("#success").removeClass("d-none");
+        console.log("success message displayed")
       })
       .fail(function() {
-        $("#submit").append("<div>error</div>");
-        console.log("error message appended")
+        $("#submit").addClass("d-none");
+        $("#fail").removeClass("d-none");
+        console.log("error message displayed")
     });
     event.preventDefault();
   });
+
+  // submit another response
+  $("#success a").click(function() {
+    $("#success").addClass("d-none"); // hide success message 
+    $("#submit").removeClass("d-none"); // bring back form
+    // clear form
+    $("#alias-field").val(""); 
+    $("#tipContent-field").val("");
+  });
+
 });

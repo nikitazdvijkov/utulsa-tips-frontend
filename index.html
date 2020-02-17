@@ -42,7 +42,7 @@
         max-width: 600px;
       }
       h1 {
-        font-family: 'Martel', serif;
+        font-family: 'Crete Round', serif;
       }
       #divider i {
         color: lightgray;
@@ -57,144 +57,86 @@
     </style>
   </head>
   <body>
-    <div id="header" class="jumbotron text-center rounded-0 mb-0">
+    <div id="header" class="jumbotron text-center rounded-0 mb-0 py-5">
       <div class="container">
         <!--
         <i class="fas fa-hand-point-right" style="font-size: 3.2em;"></i><br>
         -->
-        <img src="johnny-automatic-pointing-hand.svg" alt="pointing hand logo">
-        <h1 class="mt-3">UTulsa.Tips</h1>
+        <div class="my-5">
+          <img src="johnny-automatic-pointing-hand.svg" alt="pointing hand logo">
+        </div>
+        <h1 class="my-5">UTulsa.Tips</h1>
         <!--
         <small>Where TU students share advice</small>
         --> 
       </div>
     </div>
-    <div id="main" class="container">
-      <div id="better-filter" class="mt-5 text-center">
-        <h2 class="mb-3"><i class="fas fa-filter mr-2"></i>Filter</h2>
-        
-        <div style="max-width: 500px;" class="text-center d-block mx-auto">
-          <div class="list-group text-center font-weight-bold d-inline" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-secondary list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">All</a>
-            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">School</a>
-            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Fun</a>
-            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">$$$</a>
+    <div id="main" class="container py-5">
+
+      <div id="filter" class="my-5 text-center">
+        <h2 class="my-4"><i class="fas fa-filter mr-2"></i>Filter</h2>
+        <div style="max-width: 500px;" class="d-block mx-auto">
+          <div class="list-group text-center font-weight-bold d-inline" id="list-group-nav" role="tablist">
+            <a class="list-group-item list-group-item-secondary list-group-item-action active" id="all-button" data-toggle="list" href="#all-tips" role="tab" aria-controls="all">All</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="school-button" data-toggle="list" href="#school-tips" role="tab" aria-controls="school">School</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="fun-button" data-toggle="list" href="#fun-tips" role="tab" aria-controls="fun">Fun</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="money-button" data-toggle="list" href="#money-tips" role="tab" aria-controls="money">$$$</a>
           </div>
         </div>
-        
-
-        <!--
-        <div class="btn-group btn-group-toggle" role="group" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" data-toggle="list" href="#all" role="tab" checked> All
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2" data-toggle="list" href="#school" role="tab"> School
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3" data-toggle="list" href="#fun" role="tab"> Fun
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option4" data-toggle="list" href="#orgs" role="tab"> Orgs
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option5" data-toggle="list" href="#money" role="tab"> $$$
-          </label>
-        </div>
-        -->
-        
-      </div>
-      <div id="filters" class="mt-5">
-        this is where old button group filter feature used to be
-        <!--
-        <div class="list-group text-center d-block mx-auto" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action py-1 active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-          <a class=" py-1" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-          <a class="list-group-item list-group-item-action py-1" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-          <a class="list-group-item list-group-item-action py-1" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-        </div>
-        -->
       </div>
 
-      <h2 class="mt-5">All the tips:</h2>
-
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">all</div>
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">school</div>
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">fun</div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">data</div>
-      </div>
+      <div id="loading-message" class="text-center my-5">Loading...</div>
       
-      <!-- 
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="all" role="tabpanel">all</div>
-        <div class="tab-pane fade show" id="school" role="tabpanel">school</div>
-        <div class="tab-pane fade show" id="fun" role="tabpanel">fun</div>
-        <div class="tab-pane fade show" id="orgs" role="tabpanel">orgs</div>
-        <div class="tab-pane fade show" id="money" role="tabpanel">money</div>
+      <div class="tab-content my-5 d-none" id="list-group-content">
+        <div class="tab-pane fade show active" id="all-tips" role="tabpanel" aria-labelledby="all"></div>
+        <div class="tab-pane fade" id="school-tips" role="tabpanel" aria-labelledby="school"></div>
+        <div class="tab-pane fade" id="fun-tips" role="tabpanel" aria-labelledby="fun"></div>
+        <div class="tab-pane fade" id="money-tips" role="tabpanel" aria-labelledby="money"></div>
       </div>
-      -->
-      
 
-      <div id="cards" class="mt-5">
-        <div class="text-center">Loading&hellip;</div>
+      <div id="divider" class="text-center my-5 py-5">
+        <i class="fas fa-comments"></i>
       </div>
-      <div id="divider" class="text-center mt-5">
-        <i class="fas fa-asterisk"></i>
-      </div>
-      <div id="submit" class="mt-5">
-        <h2 class="mb-4">Submit your own&hellip;</h2>
+
+
+      <div id="submit" class="my-5">
+        <h2 class="mb-4">Submit your own&hellip;</h2> 
+        <p>Submissions moderated &ndash; won't go live immediately.</p>
         <form id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1">Alias</label>
-            <input name="name" value="" class="form-control" placeholder="Captain Cane">
+            <input id="alias-field" name="alias" value="" class="form-control" placeholder="Captain Cane">
             <small id="" class="form-text text-muted">
               Optional &ndash; defaults to &ldquo;Anonymous&rdquo; if left blank.
             </small>
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Words of wisdom</label>
-            <textarea name="price" value="" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Know about this opportunity. Take this class. Do this thing."></textarea>
+            <textarea name="tipContent" value="" class="form-control" id="tipContent-field" rows="3" placeholder="Know about this opportunity. Take this class. Do this thing."></textarea>
             <small id="" class="form-text text-muted">
               Please make separate submissions for unrelated pieces of advice.
             </small>
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Applicable categories</label>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customControlInline">
-              <label class="custom-control-label" for="customControlInline">School</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customControlInline">
-              <label class="custom-control-label" for="customControlInline">Fun</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customControlInline">
-              <label class="custom-control-label" for="customControlInline">Orgs</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customControlInline">
-              <label class="custom-control-label" for="customControlInline">$$$</label>
-            </div>
-          </div>
           <input type="submit" value="Submit" class="btn btn-primary">
         </form>
       </div>
-      <div id="success" class="text-center mt-5">
+
+      <div id="success" class="text-center my-5 d-none">
         <div class="mb-3">
           <i class="fas fa-check mr-2" style="color: green;"></i>Submission received &ndash;
-          <a href="#">make another.</a>
+          <a href="#submit">make another.</a>
         </div>
       </div>
-      <div id="fail" class="text-center mt-5">
+
+      <div id="fail" class="text-center my-5 d-none">
         <div class="mb-3">
           <i class="fas fa-times mr-2" style="color: red;"></i>
           Something went wrong. Try again later.
         </div>
       </div>
+
     </div>
-    <div id="footer" class="text-center bg-light py-3 mt-5">
+    <div id="footer" class="text-center bg-light py-3">
       <div class="container">
         <div>
           Made by
@@ -204,8 +146,7 @@
         </div>
         <div>
           <small id="fine-print" class="text-muted">
-            This website is not endorsed by the University of Tulsa. 
-            Submissions moderated. 
+            This website is not (yet) endorsed by the University of Tulsa.
             <!--
             Built using Node.js, MongoDB Atlas, Heroku, jQuery, and Netlify.
             <a href="/about">More info.</a>
