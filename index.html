@@ -72,39 +72,70 @@
     <div id="main" class="container">
       <div id="better-filter" class="mt-5 text-center">
         <h2 class="mb-3"><i class="fas fa-filter mr-2"></i>Filter</h2>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        
+        <div style="max-width: 500px;" class="text-center d-block mx-auto">
+          <div class="list-group text-center font-weight-bold d-inline" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-secondary list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">All</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">School</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Fun</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">$$$</a>
+          </div>
+        </div>
+        
+
+        <!--
+        <div class="btn-group btn-group-toggle" role="group" data-toggle="buttons">
           <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked> All
+            <input type="radio" name="options" id="option1" data-toggle="list" href="#all" role="tab" checked> All
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2"> School
+            <input type="radio" name="options" id="option2" data-toggle="list" href="#school" role="tab"> School
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> Fun
+            <input type="radio" name="options" id="option3" data-toggle="list" href="#fun" role="tab"> Fun
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> Orgs
+            <input type="radio" name="options" id="option4" data-toggle="list" href="#orgs" role="tab"> Orgs
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> $$$
+            <input type="radio" name="options" id="option5" data-toggle="list" href="#money" role="tab"> $$$
           </label>
         </div>
+        -->
+        
       </div>
       <div id="filters" class="mt-5">
+        this is where old button group filter feature used to be
+        <!--
         <div class="list-group text-center d-block mx-auto" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action py-1 active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
           <a class=" py-1" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
           <a class="list-group-item list-group-item-action py-1" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
           <a class="list-group-item list-group-item-action py-1" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
         </div>
+        -->
       </div>
+
       <h2 class="mt-5">All the tips:</h2>
+
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">a</div>
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">b</div>
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">c</div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">d</div>
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">all</div>
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">school</div>
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">fun</div>
+        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">data</div>
       </div>
+      
+      <!-- 
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="all" role="tabpanel">all</div>
+        <div class="tab-pane fade show" id="school" role="tabpanel">school</div>
+        <div class="tab-pane fade show" id="fun" role="tabpanel">fun</div>
+        <div class="tab-pane fade show" id="orgs" role="tabpanel">orgs</div>
+        <div class="tab-pane fade show" id="money" role="tabpanel">money</div>
+      </div>
+      -->
+      
+
       <div id="cards" class="mt-5">
         <div class="text-center">Loading&hellip;</div>
       </div>
