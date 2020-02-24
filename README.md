@@ -1,5 +1,9 @@
 # README
 
+## original tips book by SA / Conner Bender
+
+[http://tu.connerbender.com/tips/TU_TIP_BOOK.pdf](http://tu.connerbender.com/tips/TU_TIP_BOOK.pdf)
+
 ## fonts howto
 
 ```CSS
